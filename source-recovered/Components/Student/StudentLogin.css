@@ -1,0 +1,593 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+
+    background:#eef4f8;
+
+}
+
+.student-login-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    background:#eef4f8;
+
+}
+
+.student-login-wrapper{
+
+    width:100%;
+
+    max-width:1250px;
+
+    min-height:700px;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.student-login-left{
+
+    position:relative;
+
+    background:linear-gradient(
+        135deg,
+        #02af48 0%,
+        #064c22 55%,
+        #000000 100%
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.student-login-overlay{
+
+    width:100%;
+
+    color:#ffffff;
+
+}
+
+.student-login-overlay h1{
+
+    font-size:48px;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+.student-login-overlay h1 span{
+
+    color:#ffffff;
+
+}
+
+.student-login-overlay p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    opacity:.92;
+
+    margin-bottom:40px;
+
+}
+
+.student-login-features{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.student-login-features div{
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    padding:16px 20px;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+
+.student-login-features div:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.student-login-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px;
+
+}
+
+.student-login-card{
+
+    width:100%;
+
+    max-width:420px;
+
+}
+
+.student-login-card h2{
+
+    font-size:38px;
+
+    color:#111827;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+.student-login-card p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+.student-success-message{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:22px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#065f46;
+
+    background:#d1fae5;
+
+}
+
+.student-input-group{
+
+    margin-bottom:22px;
+
+}
+
+.student-input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#1e293b;
+
+}
+
+.student-input-group input{
+
+    width:100%;
+
+    height:55px;
+
+    border:1px solid #dbe4ee;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.35s;
+
+    background:#f8fafc;
+
+}
+
+.student-input-group input:focus{
+
+    background:#ffffff;
+
+    border-color:#02af48;
+
+    box-shadow:0 0 0 4px rgba(2,175,72,.12);
+
+}
+
+.student-input-group input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.student-login-links{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:25px;
+
+}
+
+.student-login-links a{
+
+    color:#02af48;
+
+    font-size:14px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.student-login-links a:hover{
+
+    color:#064c22;
+
+}
+
+.student-login-btn{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    background:linear-gradient(
+        to bottom,
+        #02af48,
+        #064c22,
+        #000000
+    );
+
+    box-shadow:0 15px 30px rgba(2,175,72,.25);
+
+}
+
+.student-login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 20px 35px rgba(2,175,72,.35);
+
+}
+
+.student-login-btn:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+.student-register-text{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    color:#64748b;
+
+}
+
+.student-register-text a{
+
+    color:#02af48;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    margin-left:6px;
+
+}
+
+.student-register-text a:hover{
+
+    color:#064c22;
+
+}
+
+@media(max-width:1100px){
+
+    .student-login-wrapper{
+
+        grid-template-columns:1fr;
+
+        max-width:700px;
+
+    }
+
+    .student-login-left{
+
+        min-height:340px;
+
+        padding:40px;
+
+    }
+
+    .student-login-overlay{
+
+        text-align:center;
+
+    }
+
+    .student-login-overlay h1{
+
+        font-size:38px;
+
+    }
+
+    .student-login-features{
+
+        max-width:420px;
+
+        margin:30px auto 0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .student-login-container{
+
+        padding:15px;
+
+    }
+
+    .student-login-wrapper{
+
+        border-radius:22px;
+
+    }
+
+    .student-login-left{
+
+        padding:30px 25px;
+
+        min-height:300px;
+
+    }
+
+    .student-login-overlay h1{
+
+        font-size:32px;
+
+    }
+
+    .student-login-overlay p{
+
+        font-size:15px;
+
+        margin-bottom:25px;
+
+    }
+
+    .student-login-features div{
+
+        padding:14px 16px;
+
+        font-size:14px;
+
+    }
+
+    .student-login-right{
+
+        padding:35px 22px;
+
+    }
+
+    .student-login-card{
+
+        max-width:100%;
+
+    }
+
+    .student-login-card h2{
+
+        font-size:30px;
+
+    }
+
+    .student-login-card p{
+
+        font-size:14px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .student-login-container{
+
+        padding:10px;
+
+    }
+
+    .student-login-wrapper{
+
+        border-radius:18px;
+
+    }
+
+    .student-login-left{
+
+        padding:25px 18px;
+
+        min-height:260px;
+
+    }
+
+    .student-login-overlay h1{
+
+        font-size:26px;
+
+    }
+
+    .student-login-overlay p{
+
+        font-size:13px;
+
+        line-height:1.7;
+
+    }
+
+    .student-login-features{
+
+        gap:12px;
+
+    }
+
+    .student-login-features div{
+
+        padding:12px;
+
+        font-size:13px;
+
+        border-radius:10px;
+
+    }
+
+    .student-login-right{
+
+        padding:25px 18px;
+
+    }
+
+    .student-login-card h2{
+
+        font-size:26px;
+
+    }
+
+    .student-login-card p{
+
+        font-size:13px;
+
+        margin-bottom:20px;
+
+    }
+
+    .student-input-group{
+
+        margin-bottom:18px;
+
+    }
+
+    .student-input-group input{
+
+        height:50px;
+
+        font-size:14px;
+
+    }
+
+    .student-login-btn{
+
+        height:50px;
+
+        font-size:15px;
+
+    }
+
+    .student-register-text{
+
+        font-size:14px;
+
+    }
+}

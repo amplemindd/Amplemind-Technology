@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" type="image/x-icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><title>AmpleMind Technologies</title><meta name="description" content="AmpleMind Technologies provides professional website development, software solutions, mobile app development, and internship programs."/><meta name="keywords" content="Website Development, Software Company, App Development, Python Internship, Full Stack Development, React Development, Web Design, Mobile App Development"/><meta name="author" content="AmpleMind Technologies"/><meta property="og:title" content="AmpleMind Technologies"/><meta property="og:description" content="Professional website development, software solutions and mobile app development services."/><meta property="og:type" content="website"/><meta property="og:image" content="/Amplemind.jpeg"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="AmpleMind Technologies"/><meta name="twitter:description" content="Website Development, Software Solutions and App Development Company."/><link rel="apple-touch-icon" href="/favicon.ico"/><link rel="manifest" href="/manifest.json"/><script defer="defer" src="/static/js/main.bf3aed29.js?v=20261005seminar8"></script><link href="/static/css/main.0951170b.css" rel="stylesheet">
+<style id="hide-student-menu-items">
+  a:has(*), button:has(*), li, div {
+  }
+
+  a, button, li {
+    --hide-menu-item: 0;
+  }
+
+  a:has(span), button:has(span), li:has(span) {
+  }
+
+  /* My Courses / My Tests menu items */
+  a[href*="courses"],
+  a[href*="my-courses"],
+  a[href*="tests"],
+  a[href*="my-tests"] {
+    display: none !important;
+  }
+</style>
+
+    <meta name="google-site-verification" content="4291eCiwt5r4zCIKxzsrWiDwllctE9NSMpu0QbrC3e8" />
+<link rel="stylesheet" href="/seminar-admin.css?v=20261005ui"><link rel="stylesheet" href="/admin-applications-fix.css?v=20261006appfix5"><link rel="stylesheet" href="/student-analytics.css?v=20261021-analytics6"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div>
+
+
+
+
+
+
+
+
+
+<script id="hide-student-menu-js">
+(function () {
+  function hideStudentMenuItems() {
+    document.querySelectorAll("li").forEach(function (el) {
+      var text = (el.textContent || "").replace(/\s+/g, " ").trim();
+
+      if (text === "📚My Courses" ||
+          text === "📚 My Courses" ||
+          text === "My Courses") {
+        el.style.setProperty("display", "none", "important");
+      }
+
+      if (text === "📝My Tests" ||
+          text === "📝 My Tests" ||
+          text === "My Tests") {
+        el.style.setProperty("display", "none", "important");
+      }
+    });
+  }
+
+  function start() {
+    hideStudentMenuItems();
+
+    new MutationObserver(function () {
+      hideStudentMenuItems();
+    }).observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    setInterval(hideStudentMenuItems, 1000);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+</script>
+
+<script src="/admin-applications-fix.js?v=20261006appfix1"></script><script src="/student-analytics.js?v=20261021-analytics6"></script><script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js')})}</script></body></html>

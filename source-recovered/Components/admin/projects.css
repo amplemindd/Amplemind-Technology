@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.admin-projects-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.admin-project-stats-card {
+  background: linear-gradient(
+    135deg,
+    #02af48 0%,
+    #07662d 45%,
+    #03381a 70%,
+    #000000 100%
+  );
+  color: #ffffff;
+  padding: 24px 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 0 10px 25px rgba(2, 175, 72, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 30px;
+}
+
+.admin-project-stats-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(2, 175, 72, 0.22);
+}
+
+.admin-project-stats-card h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+}
+
+.admin-project-stats-card h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.admin-projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admin-projects-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.admin-add-project-btn {
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: linear-gradient(135deg, #02af48, #07662d);
+  box-shadow: 0 6px 16px rgba(2, 175, 72, 0.18);
+  white-space: nowrap;
+}
+
+.admin-add-project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(2, 175, 72, 0.3);
+}
+
+.admin-project-form {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.admin-project-form input,
+.admin-project-form select {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #0f172a;
+  transition: all 0.3s ease;
+}
+
+.admin-project-form input:focus,
+.admin-project-form select:focus {
+  outline: none;
+  border-color: #02af48;
+  box-shadow: 0 0 0 3px rgba(2, 175, 72, 0.1);
+}
+
+.admin-project-form input::placeholder {
+  color: #94a3b8;
+}
+
+.admin-project-btns {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.admin-save-btn {
+  min-width: 140px;
+  height: 42px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: linear-gradient(135deg, #02af48, #07662d);
+  box-shadow: 0 4px 12px rgba(2, 175, 72, 0.15);
+}
+
+.admin-save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(2, 175, 72, 0.28);
+}
+
+.admin-cancel-btn {
+  min-width: 100px;
+  height: 42px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: #ef4444;
+}
+
+.admin-cancel-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.admin-projects-table-wrapper {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 5px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
+  overflow: hidden;
+}
+
+.admin-projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.admin-projects-table th:nth-child(1), .admin-projects-table td:nth-child(1) { width: 35%; }
+.admin-projects-table th:nth-child(2), .admin-projects-table td:nth-child(2) { width: 30%; }
+.admin-projects-table th:nth-child(3), .admin-projects-table td:nth-child(3) { width: 18%; }
+.admin-projects-table th:nth-child(4), .admin-projects-table td:nth-child(4) { width: 17%; }
+
+.admin-projects-table th {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  border-bottom: 2px solid #f1f5f9;
+  background: #f8fafc;
+  white-space: nowrap;
+}
+
+.admin-projects-table td {
+  padding: 14px 12px;
+  font-size: 13.5px;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-projects-table tbody tr:hover {
+  background: #f0fdf4; 
+}
+
+.admin-status-active,
+.admin-status-completed,
+.admin-status-pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.admin-status-completed { background: #dcfce7; color: #15803d; }
+.admin-status-completed::before { content: "•"; font-size: 16px; margin-right: 2px; color: #10b981; }
+
+.admin-status-pending { background: #fee2e2; color: #dc2626; }
+.admin-status-pending::before { content: "•"; font-size: 16px; margin-right: 2px; color: #ef4444; }
+
+.admin-status-active { background: #e0f2fe; color: #0369a1; }
+.admin-status-active::before { content: "•"; font-size: 16px; margin-right: 2px; color: #0ea5e9; }
+
+.admin-edit-btn,
+.admin-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 12px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-edit-btn {
+  background: rgba(217, 119, 6, 0.08);
+  color: #d97706;
+  border: 1px solid rgba(217, 119, 6, 0.12);
+  margin-right: 6px;
+}
+.admin-edit-btn:hover { background: #d97706; color: #ffffff; }
+
+.admin-delete-btn {
+  background: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.12);
+}
+.admin-delete-btn:hover { background: #dc2626; color: #ffffff; }
+
+.admin-projects-table-wrapper::-webkit-scrollbar { height: 6px; }
+.admin-projects-table-wrapper::-webkit-scrollbar-thumb { background: rgba(2, 175, 72, 0.3); border-radius: 10px; }
+.admin-projects-table-wrapper::-webkit-scrollbar-track { background: #f1f5f9; }
+
+@media (max-width: 1200px) {
+  .admin-projects-table-wrapper { overflow-x: auto; }
+  .admin-projects-table { table-layout: auto; min-width: 800px; }
+  .admin-projects-table th, .admin-projects-table td { width: auto !important; }
+}
+
+@media(max-width: 992px) {
+  .admin-projects-container { padding: 20px; }
+  .admin-projects-header { flex-direction: column; align-items: stretch; gap: 14px; }
+  .admin-add-project-btn { width: 100%; text-align: center; justify-content: center; }
+  .admin-project-btns { flex-direction: column; }
+  .admin-save-btn, .admin-cancel-btn { width: 100%; }
+}
+
+@media(max-width: 768px) {
+  .admin-projects-container { padding: 15px; }
+  .admin-projects-header h1 { font-size: 24px; }
+  .admin-project-stats-card h1 { font-size: 32px; }
+}

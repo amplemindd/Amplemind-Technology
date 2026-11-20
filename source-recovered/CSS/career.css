@@ -1,0 +1,647 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* ================= PAGE WRAPPER ================= */
+
+.amp-career-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #060d08;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(2, 175, 72, 0.25), transparent 70%),
+    linear-gradient(to bottom, #021208 0%, #050d08 100%);
+  color: #ffffff;
+  margin-top: 90px;
+}
+
+/* Tech Grid Pattern Overlay */
+.amp-career-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.amp-career-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= HERO SECTION ================= */
+
+.amp-career-header {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.amp-career-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 50px;
+  background: rgba(159, 255, 194, 0.1);
+  border: 1px solid rgba(159, 255, 194, 0.25);
+  color: #9fffc2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.amp-career-header h1 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.amp-career-header p {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ================= JOB GRID ================= */
+
+.amp-career-jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+/* ================= JOB CARD ================= */
+
+.amp-job-card {
+  background: rgba(15, 28, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amp-job-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(159, 255, 194, 0.35);
+  background: rgba(18, 38, 26, 0.75);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(2, 175, 72, 0.2);
+}
+
+/* ================= CARD TOP ================= */
+
+.amp-job-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.amp-job-card-top h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.amp-status-badge {
+  padding: 4px 12px;
+  border-radius: 30px;
+  background: rgba(159, 255, 194, 0.12);
+  border: 1px solid rgba(159, 255, 194, 0.3);
+  color: #9fffc2;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ================= JOB INFO BOX ================= */
+
+.amp-job-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 22px;
+}
+
+.amp-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.amp-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.amp-info-label {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.amp-info-value {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ================= APPLY BUTTON ================= */
+
+.amp-apply-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #d7ff2f;
+  color: #0b150c;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(215, 255, 47, 0.18);
+}
+
+.amp-apply-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.25);
+}
+
+.amp-apply-btn span {
+  transition: transform 0.25s ease;
+}
+
+.amp-apply-btn:hover span {
+  transform: translateX(4px);
+}
+
+/* ================= FORM OVERLAY ================= */
+
+.amp-application-overlay {
+  position: fixed;
+  top: 90px; /* Navbar ki height jitna margin top */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(3, 10, 5, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px 80px; /* Bottom padding for mobile floating chat icon */
+  z-index: 99999;
+  overflow-y: auto;
+}
+
+/* ================= FORM CONTAINER ================= */
+
+.amp-application-form {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  background: #0c1810;
+  border: 1px solid rgba(159, 255, 194, 0.25);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(2, 175, 72, 0.2);
+  animation: formPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: 0 auto;
+}
+
+@keyframes formPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.amp-form-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.amp-form-close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #ef4444;
+}
+
+/* ================= FORM HEADER ================= */
+
+.amp-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  padding-right: 30px; /* Space so close button doesn't overlap text */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.amp-form-header h2 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.amp-form-subtitle {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.amp-job-tag {
+  background: rgba(159, 255, 194, 0.1);
+  border: 1px solid rgba(159, 255, 194, 0.25);
+  color: #9fffc2;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ================= FORM INPUTS ================= */
+
+.amp-form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.amp-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.amp-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.amp-input-group label {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.amp-form-inputs input,
+.amp-form-inputs textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.amp-form-inputs textarea {
+  resize: vertical;
+}
+
+.amp-form-inputs input::placeholder,
+.amp-form-inputs textarea::placeholder {
+  color: #64748b;
+}
+
+.amp-form-inputs input:focus,
+.amp-form-inputs textarea:focus {
+  border-color: #9fffc2;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 12px rgba(159, 255, 194, 0.15);
+}
+
+/* ================= FILE DROPZONE ================= */
+
+.amp-file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.amp-file-upload label {
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.amp-dropzone {
+  position: relative;
+  border: 1px dashed rgba(159, 255, 194, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px;
+  text-align: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.amp-dropzone:hover {
+  border-color: #9fffc2;
+  background: rgba(159, 255, 194, 0.04);
+}
+
+.amp-dropzone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.amp-dropzone-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #9fffc2;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.amp-upload-icon {
+  font-size: 18px;
+}
+
+/* ================= NOTIFICATIONS ================= */
+
+.amp-success-message {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.amp-error-message {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.amp-application-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.amp-submit-btn {
+  flex: 2;
+  height: 46px;
+  border: none;
+  border-radius: 12px;
+  background: #d7ff2f;
+  color: #0b150c;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.amp-submit-btn:hover:not(:disabled) {
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.amp-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.amp-cancel-btn {
+  flex: 1;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.amp-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================= EMPTY STATE ================= */
+
+.amp-no-job {
+  grid-column: 1 / -1;
+  background: rgba(15, 28, 20, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 60px 20px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.amp-no-job-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.amp-no-job h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.amp-no-job p {
+  color: #94a3b8;
+  font-size: 14px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* ================= CUSTOM SCROLLBAR ================= */
+
+.amp-application-overlay::-webkit-scrollbar,
+.amp-application-form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.amp-application-overlay::-webkit-scrollbar-track,
+.amp-application-form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.amp-application-overlay::-webkit-scrollbar-thumb,
+.amp-application-form::-webkit-scrollbar-thumb {
+  background: rgba(159, 255, 194, 0.25);
+  border-radius: 10px;
+}
+
+.amp-application-overlay::-webkit-scrollbar-thumb:hover,
+.amp-application-form::-webkit-scrollbar-thumb:hover {
+  background: #9fffc2;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 992px) {
+  .amp-career-container {
+    padding: 80px 0 60px;
+  }
+
+  .amp-career-header h1 {
+    font-size: 38px;
+  }
+
+  .amp-career-jobs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .amp-career-wrapper {
+    margin-top: 70px;
+  }
+
+  .amp-application-overlay {
+    top: 70px; /* Adjust top for mobile navbar height */
+    padding: 16px 12px 90px; /* Space for floating action icons */
+  }
+
+  .amp-career-header h1 {
+    font-size: 32px;
+  }
+
+  .amp-career-jobs {
+    grid-template-columns: 1fr;
+  }
+
+  .amp-input-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .amp-application-form {
+    padding: 20px 16px;
+    max-height: none; /* Let overlay scroll handle mobile height smoothly */
+    border-radius: 16px;
+  }
+
+  .amp-form-header {
+    padding-right: 25px;
+  }
+
+  .amp-form-header h2 {
+    font-size: 18px;
+  }
+
+  .amp-form-inputs input,
+  .amp-form-inputs textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .amp-application-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .amp-submit-btn,
+  .amp-cancel-btn {
+    width: 100%;
+    min-height: 48px; 
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .amp-career-container {
+    padding: 50px 0 30px;
+  }
+
+  .amp-career-header h1 {
+    font-size: 26px;
+  }
+
+  .amp-career-header p {
+    font-size: 14px;
+  }
+
+  .amp-form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

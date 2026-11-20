@@ -1,0 +1,2372 @@
+/* ==========================================
+   CHATBOT FLOATING BUTTON
+========================================== */
+
+.chatbot-button{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:50%;
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:99999;
+
+}
+
+.chatbot-button:hover{
+
+    transform:scale(1.08);
+
+    background:#0b5ed7;
+
+}
+
+/* ==========================================
+   CHAT WINDOW
+========================================== */
+
+.chat-window{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:100px;
+
+    width:350px;
+
+    height:610px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.22);
+
+    z-index:99998;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.chat-header{
+
+    height:72px;
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 18px;
+
+}
+
+.header-left{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.bot-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.2);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    margin-right:12px;
+
+}
+
+.header-left h3{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    margin-bottom:3px;
+
+}
+
+.header-left span{
+
+    font-size:12px;
+
+    opacity:.9;
+
+}
+
+.close-btn{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+/* ==========================================
+   CHAT BODY
+========================================== */
+
+.chat-body{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:18px;
+
+    background:#f4f7fb;
+
+}
+
+.chat-body::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.chat-body::-webkit-scrollbar-thumb{
+
+    background:#d2d2d2;
+
+    border-radius:30px;
+
+}
+
+/* ==========================================
+   MESSAGE ROW
+========================================== */
+
+.message-row{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    margin-bottom:18px;
+
+}
+
+.message-row.bot{
+
+    justify-content:flex-start;
+
+}
+
+.message-row.user{
+
+    justify-content:flex-end;
+
+}
+
+/* ==========================================
+   AVATAR
+========================================== */
+
+.avatar{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:20px;
+
+    flex-shrink:0;
+
+}
+
+.bot-avatar{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    margin-right:10px;
+
+}
+
+.user-avatar{
+
+    background:#28a745;
+
+    color:#fff;
+
+    margin-left:10px;
+
+}
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.message-wrapper{
+
+    max-width:78%;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.message-bubble{
+
+    padding:12px 16px;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    border-radius:18px;
+
+    word-break:break-word;
+
+    white-space:pre-line;
+
+}
+
+.message-bubble.bot{
+
+    background:#fff;
+
+    color:#333;
+
+    border:1px solid #e5e5e5;
+
+    border-bottom-left-radius:6px;
+
+}
+
+.message-bubble.user{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    border-bottom-right-radius:6px;
+
+}
+
+.message-time{
+
+    font-size:11px;
+
+    color:#888;
+
+    margin-top:4px;
+
+}
+
+.message-row.bot .message-time{
+
+    text-align:left;
+
+}
+
+.message-row.user .message-time{
+
+    text-align:right;
+
+}
+
+/* ==========================================
+   MENU BUTTON
+========================================== */
+
+.menu-button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.menu-button:hover{
+
+    background:#0b5ed7;
+
+}
+
+/* ==========================================
+   CHAT INPUT
+========================================== */
+
+.chat-input-container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px;
+
+    background:#fff;
+
+    border-top:1px solid #e5e5e5;
+
+}
+
+.chat-input{
+
+    flex:1;
+
+    height:45px;
+
+    padding:0 15px;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:25px;
+
+    outline:none;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.chat-input:focus{
+
+    border-color:#0d6efd;
+
+}
+
+.send-button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.send-button:hover{
+
+    background:#0b5ed7;
+
+}
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+.contact-form{
+
+    background:#fff;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    margin-top:15px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.contact-form h3{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    color:#0d6efd;
+
+}
+
+.contact-form input,
+
+.contact-form textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:14px;
+
+    transition:.3s;
+
+    resize:none;
+
+}
+
+.contact-form input:focus,
+
+.contact-form textarea:focus{
+
+    border-color:#0d6efd;
+
+}
+
+.submit-btn{
+
+    width:100%;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+    background:#0b5ed7;
+
+}
+
+/* ==========================================
+   APPLY BUTTON
+========================================== */
+
+.apply-btn{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#28a745;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    transition:.3s;
+
+}
+
+.apply-btn:hover{
+
+    background:#218838;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.chat-footer{
+
+    background:#fff;
+
+    padding:10px;
+
+    border-top:1px solid #e5e5e5;
+
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .chat-window{
+
+        width:95%;
+
+        height:88vh;
+
+        right:2.5%;
+
+        bottom:90px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .chatbot-button{
+
+        width:58px;
+
+        height:58px;
+
+        right:15px;
+
+        bottom:15px;
+
+        font-size:24px;
+
+    }
+
+    .chat-window{
+
+        width:100%;
+
+        height:100vh;
+
+        right:0;
+
+        bottom:0;
+
+        border-radius:0;
+
+    }
+
+    .chat-header{
+
+        height:65px;
+
+        padding:0 15px;
+
+    }
+
+    .bot-icon{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:20px;
+
+    }
+
+    .header-left h3{
+
+        font-size:15px;
+
+    }
+
+    .header-left span{
+
+        font-size:11px;
+
+    }
+
+    .chat-body{
+
+        padding:12px;
+
+    }
+
+    .message-wrapper{
+
+        max-width:85%;
+
+    }
+
+    .message-bubble{
+
+        font-size:13px;
+
+        padding:10px 14px;
+
+    }
+
+    .chat-input{
+
+        height:42px;
+
+        font-size:13px;
+
+    }
+
+    .send-button{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:16px;
+
+    }
+
+    .contact-form{
+
+        padding:15px;
+
+    }
+
+    .contact-form input,
+
+    .contact-form textarea{
+
+        font-size:13px;
+
+    }
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+.chat-window{
+
+    animation:chatOpen .25s ease;
+
+}
+
+@keyframes chatOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   COURSE LIST
+========================================== */
+
+.course-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:15px;
+
+}
+
+.course-btn{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    border:1px solid #e5e5e5;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.course-btn:hover{
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    transform:translateX(5px);
+
+}
+
+/* ==========================================
+   QUICK OPTION CARD
+========================================== */
+
+.option-card{
+
+    background:#fff;
+
+    border:1px solid #e5e5e5;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.option-card:hover{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 5px 15px rgba(13,110,253,.15);
+
+    transform:translateY(-2px);
+
+}
+
+.option-title{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#222;
+
+    margin-bottom:5px;
+
+}
+
+.option-subtitle{
+
+    font-size:13px;
+
+    color:#666;
+
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+.typing{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    padding:12px 15px;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    width:fit-content;
+
+}
+
+.typing span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#999;
+
+    animation:blink 1.4s infinite;
+
+}
+
+.typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes blink{
+
+    0%{
+
+        opacity:.3;
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        opacity:.3;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   HIDE SCROLLBAR
+========================================== */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#d0d0d0 transparent;
+
+}
+
+*::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+*::-webkit-scrollbar-thumb{
+
+    background:#d0d0d0;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   WELCOME CARD
+========================================== */
+
+.welcome-card{
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    border:1px solid #e8e8e8;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
+
+}
+
+.welcome-card h2{
+
+    font-size:18px;
+
+    color:#0d6efd;
+
+    margin-bottom:10px;
+
+}
+
+.welcome-card p{
+
+    font-size:14px;
+
+    color:#555;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   INFO CARD
+========================================== */
+
+.info-card{
+
+    background:#ffffff;
+
+    border:1px solid #e8e8e8;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-top:15px;
+
+}
+
+.info-card h3{
+
+    font-size:16px;
+
+    color:#0d6efd;
+
+    margin-bottom:10px;
+
+}
+
+.info-card ul{
+
+    padding-left:18px;
+
+}
+
+.info-card li{
+
+    margin-bottom:8px;
+
+    color:#444;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   COURSE DETAIL CARD
+========================================== */
+
+.course-detail{
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    border:1px solid #e5e5e5;
+
+    padding:18px;
+
+    margin-top:15px;
+
+}
+
+.course-detail h3{
+
+    color:#0d6efd;
+
+    margin-bottom:12px;
+
+    font-size:18px;
+
+}
+
+.course-detail p{
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    color:#444;
+
+    line-height:1.7;
+
+}
+
+.course-detail strong{
+
+    color:#111;
+
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    background:#0d6efd;
+
+    color:#fff;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    margin:4px;
+
+}
+
+.badge-success{
+
+    background:#28a745;
+
+}
+
+.badge-warning{
+
+    background:#ffc107;
+
+    color:#222;
+
+}
+
+.badge-danger{
+
+    background:#dc3545;
+
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:#ececec;
+
+    margin:18px 0;
+
+}
+
+/* ==========================================
+   FADE ANIMATION
+========================================== */
+
+.fade-in{
+
+    animation:fadeIn .4s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   WHATSAPP STYLE CHAT
+========================================== */
+
+.message-row.bot .message-bubble{
+
+    position:relative;
+
+}
+
+.message-row.bot .message-bubble::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-8px;
+
+    top:12px;
+
+    width:15px;
+
+    height:15px;
+
+    background:#ffffff;
+
+    border-left:1px solid #e5e5e5;
+
+    border-bottom:1px solid #e5e5e5;
+
+    transform:rotate(45deg);
+
+}
+
+.message-row.user .message-bubble{
+
+    position:relative;
+
+}
+
+.message-row.user .message-bubble::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-8px;
+
+    top:12px;
+
+    width:15px;
+
+    height:15px;
+
+    background:#0d6efd;
+
+    transform:rotate(45deg);
+
+}
+
+/* ==========================================
+   BUTTON EFFECT
+========================================== */
+
+button{
+
+    transition:.3s ease;
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* ==========================================
+   INPUT PLACEHOLDER
+========================================== */
+
+.chat-input::placeholder,
+
+.contact-form input::placeholder,
+
+.contact-form textarea::placeholder{
+
+    color:#9a9a9a;
+
+}
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection{
+
+    background:#0d6efd;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   IMAGE SUPPORT
+========================================== */
+
+.chat-image{
+
+    width:100%;
+
+    border-radius:12px;
+
+    margin-top:8px;
+
+}
+
+/* ==========================================
+   LINK
+========================================== */
+
+.message-bubble a{
+
+    color:#0d6efd;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.message-bubble a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   DISABLED BUTTON
+========================================== */
+
+button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================
+   GLASS EFFECT
+========================================== */
+
+.chat-header{
+
+    backdrop-filter:blur(10px);
+
+}
+
+/* ==========================================
+   SHADOW
+========================================== */
+
+.message-bubble{
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+   END
+========================================== */
+
+/* ==========================================
+   DARK MODE SUPPORT
+========================================== */
+
+.chat-window.dark{
+
+    background:#1f1f1f;
+
+}
+
+.chat-window.dark .chat-body{
+
+    background:#121212;
+
+}
+
+.chat-window.dark .chat-header{
+
+    background:#202c33;
+
+}
+
+.chat-window.dark .message-bubble.bot{
+
+    background:#2a2f32;
+
+    color:#ffffff;
+
+    border-color:#3b4043;
+
+}
+
+.chat-window.dark .message-bubble.user{
+
+    background:#005c4b;
+
+}
+
+.chat-window.dark .chat-footer{
+
+    background:#202c33;
+
+}
+
+.chat-window.dark .chat-input{
+
+    background:#2a2f32;
+
+    color:#ffffff;
+
+    border-color:#3b4043;
+
+}
+
+.chat-window.dark .contact-form{
+
+    background:#2a2f32;
+
+    color:#ffffff;
+
+}
+
+.chat-window.dark .contact-form input,
+
+.chat-window.dark .contact-form textarea{
+
+    background:#1f1f1f;
+
+    color:#ffffff;
+
+    border-color:#444;
+
+}
+
+/* ==========================================
+   HOVER EFFECTS
+========================================== */
+
+.message-bubble{
+
+    transition:.25s;
+
+}
+
+.message-bubble:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.course-btn:hover,
+
+.menu-button:hover,
+
+.submit-btn:hover,
+
+.apply-btn:hover,
+
+.send-button:hover{
+
+    box-shadow:0 6px 20px rgba(13,110,253,.25);
+
+}
+
+/* ==========================================
+   CLICK ANIMATION
+========================================== */
+
+.course-btn:active,
+
+.menu-button:active,
+
+.submit-btn:active,
+
+.apply-btn:active,
+
+.send-button:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .chat-window{
+
+        width:360px;
+
+        height:620px;
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width:600px){
+
+    .chat-window{
+
+        width:100%;
+
+        height:100vh;
+
+        right:0;
+
+        bottom:0;
+
+        border-radius:0;
+
+    }
+
+    .chat-body{
+
+        padding:15px;
+
+    }
+
+    .message-wrapper{
+
+        max-width:88%;
+
+    }
+
+    .chatbot-button{
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+}
+
+/* ==========================================
+   PRINT
+========================================== */
+
+@media print{
+
+    .chatbot-button,
+
+    .chat-footer,
+
+    .bottom-sheet-overlay{
+
+        display:none;
+
+    }
+
+}
+
+
+/* ==========================================
+   BOTTOM SHEET FIX
+========================================== */
+
+.bottom-sheet-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    z-index:999999;
+
+    animation:fadeIn .25s ease;
+
+}
+
+.bottom-sheet{
+
+    width:100%;
+
+    max-width:420px;
+
+    background:#ffffff;
+
+    border-radius:22px 22px 0 0;
+
+    overflow:hidden;
+
+    animation:slideUp .3s ease;
+
+    box-shadow:0 -10px 35px rgba(0,0,0,.2);
+
+}
+
+.sheet-header{
+
+    padding:15px;
+
+    border-bottom:1px solid #ececec;
+
+    text-align:center;
+
+}
+
+.sheet-handle{
+
+    width:60px;
+
+    height:5px;
+
+    background:#cfcfcf;
+
+    border-radius:50px;
+
+    margin:0 auto 12px;
+
+}
+
+.sheet-header h3{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.sheet-body{
+
+    max-height:420px;
+
+    overflow-y:auto;
+
+}
+
+.sheet-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border-bottom:1px solid #f2f2f2;
+
+}
+
+.sheet-item:hover{
+
+    background:#f7f9ff;
+
+}
+
+.sheet-left{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.sheet-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#edf3ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-right:12px;
+
+    font-size:22px;
+
+}
+
+.sheet-left h4{
+
+    font-size:15px;
+
+    color:#222;
+
+    margin-bottom:3px;
+
+}
+
+.sheet-left p{
+
+    font-size:12px;
+
+    color:#777;
+
+}
+
+.sheet-right{
+
+    font-size:18px;
+
+    color:#999;
+
+}
+
+.sheet-footer{
+
+    display:flex;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-top:1px solid #ececec;
+
+}
+
+.back-button,
+
+.close-button{
+
+    flex:1;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+.back-button{
+
+    background:#6c757d;
+
+}
+
+.close-button{
+
+    background:#0d6efd;
+
+}
+
+.back-button:hover{
+
+    background:#5b6268;
+
+}
+
+.close-button:hover{
+
+    background:#0b5ed7;
+
+}
+
+/* ==========================================
+   KEYFRAMES
+========================================== */
+
+@keyframes slideUp{
+
+    from{
+
+        transform:translateY(100%);
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ==========================================
+   COURSE DETAIL SECTION
+========================================== */
+
+.course-detail-card{
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-top:15px;
+
+    border:1px solid #e8e8e8;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.course-detail-card h3{
+
+    color:#0d6efd;
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+}
+
+.course-info{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.course-info:last-child{
+
+    border-bottom:none;
+
+}
+
+.course-label{
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+.course-value{
+
+    color:#666;
+
+}
+
+/* ==========================================
+   LIST DESIGN
+========================================== */
+
+.course-list-box{
+
+    margin-top:15px;
+
+}
+
+.course-list-box li{
+
+    list-style:none;
+
+    padding:12px 15px;
+
+    margin-bottom:10px;
+
+    background:#f8f9fc;
+
+    border-radius:10px;
+
+    border-left:4px solid #0d6efd;
+
+    transition:.3s;
+
+}
+
+.course-list-box li:hover{
+
+    background:#edf4ff;
+
+    transform:translateX(5px);
+
+}
+
+/* ==========================================
+   SUCCESS MESSAGE
+========================================== */
+
+.success-message{
+
+    padding:15px;
+
+    background:#d1fae5;
+
+    color:#065f46;
+
+    border-radius:10px;
+
+    margin-top:15px;
+
+    border:1px solid #10b981;
+
+}
+
+/* ==========================================
+   ERROR MESSAGE
+========================================== */
+
+.error-message{
+
+    padding:15px;
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+    border-radius:10px;
+
+    margin-top:15px;
+
+    border:1px solid #ef4444;
+
+}
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.loading{
+
+    text-align:center;
+
+    padding:20px;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   SMOOTH TRANSITION
+========================================== */
+
+*{
+
+    transition:
+        background .25s,
+        color .25s,
+        border-color .25s,
+        box-shadow .25s;
+
+}
+
+/* ==========================================
+   CHATBOT UI POLISH
+========================================== */
+
+.chat-window{
+
+    user-select:none;
+
+}
+
+.chat-body{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================
+   EMPTY CHAT
+========================================== */
+
+.empty-chat{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100%;
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   CONTACT FORM TITLE
+========================================== */
+
+.contact-form h3{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+}
+
+/* ==========================================
+   INPUT ERROR
+========================================== */
+
+.input-error{
+
+    border:1px solid #dc3545 !important;
+
+}
+
+.error-text{
+
+    color:#dc3545;
+
+    font-size:12px;
+
+    margin-top:-8px;
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================
+   BUTTON LOADING
+========================================== */
+
+.submit-btn.loading{
+
+    opacity:.8;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   COURSE BUTTON ACTIVE
+========================================== */
+
+.course-btn.active{
+
+    background:#0d6efd;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   ONLINE DOT
+========================================== */
+
+.online-dot{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#28a745;
+
+    display:inline-block;
+
+    margin-right:5px;
+
+    animation:pulse 1.2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:scale(1.4);
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+   GLASS HEADER
+========================================== */
+
+.chat-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+}
+
+/* ==========================================
+   FOOTER STICKY
+========================================== */
+
+.chat-footer{
+
+    position:sticky;
+
+    bottom:0;
+
+    z-index:10;
+
+}
+
+/* ==========================================
+   IMAGE PREVIEW
+========================================== */
+
+.preview-image{
+
+    width:100%;
+
+    border-radius:12px;
+
+    margin-top:10px;
+
+}
+
+/* ==========================================
+   FINAL
+========================================== */
+
+
+/* ==========================================
+   WHATSAPP STYLE CHAT BACKGROUND
+========================================== */
+
+.chat-body{
+
+    background:#efeae2;
+
+    background-image:
+    radial-gradient(circle at 25px 25px,#ffffff20 2px,transparent 0),
+    radial-gradient(circle at 75px 75px,#ffffff20 2px,transparent 0);
+
+    background-size:100px 100px;
+
+}
+
+/* ==========================================
+   GLASS EFFECT
+========================================== */
+
+.chat-window{
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+}
+
+/* ==========================================
+   HOVER EFFECT
+========================================== */
+
+.sheet-item:hover,
+
+.course-btn:hover,
+
+.option-card:hover{
+
+    transform:translateX(5px);
+
+}
+
+/* ==========================================
+   CHAT SHADOW
+========================================== */
+
+.chat-window{
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.18);
+
+}
+
+/* ==========================================
+   RIPPLE EFFECT
+========================================== */
+
+button{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+button::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    left:50%;
+
+    top:50%;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.45s;
+
+}
+
+button:active::after{
+
+    width:250px;
+
+    height:250px;
+
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+input:focus,
+
+textarea:focus,
+
+button:focus{
+
+    outline:none;
+
+}
+
+/* ==========================================
+   CHAT OPEN EFFECT
+========================================== */
+
+.chat-window{
+
+    transform-origin:bottom right;
+
+    animation:popup .28s ease;
+
+}
+
+@keyframes popup{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   COURSE CARD EFFECT
+========================================== */
+
+.course-detail-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+   CONTACT FORM EFFECT
+========================================== */
+
+.contact-form{
+
+    animation:fadeForm .4s ease;
+
+}
+
+@keyframes fadeForm{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   END OF CSS
+========================================== */
+
+

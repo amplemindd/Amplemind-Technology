@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ================= PAGE WRAPPER & BACKGROUND ================= */
+.amp-blog-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #02af48 40%,
+    #064c22db 60%,
+    #000000 100%
+  );
+  position: relative;
+  margin-top: 90px;
+}
+
+/* Subtle Grid Texture */
+.amp-blog-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.amp-blog-container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 100px 0 100px; /* Top padding for navbar spacing */
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= HEADER SECTION ================= */
+.amp-blog-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.amp-blog-badge {
+  display: inline-block;
+  font-size: 13px;
+  color: #9fffc2;
+  background: rgba(159, 255, 194, 0.1);
+  border: 1px solid rgba(159, 255, 194, 0.3);
+  padding: 6px 18px;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+.amp-blog-header h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.amp-blog-header p {
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ================= CATEGORY FILTER ================= */
+.amp-blog-category-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.amp-blog-category-filter button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.45);
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.amp-blog-category-filter button:hover {
+  background: rgba(159, 255, 194, 0.15);
+  color: #ffffff;
+  border-color: rgba(159, 255, 194, 0.4);
+}
+
+.amp-blog-category-filter button.active {
+  background: #d7ff2f;
+  color: #000000;
+  border-color: #d7ff2f;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(215, 255, 47, 0.3);
+}
+
+/* ================= BLOG GRID & CARDS ================= */
+.amp-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.amp-blog-card {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.amp-blog-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(159, 255, 194, 0.45);
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(2, 175, 72, 0.2);
+}
+
+/* Image Header */
+.amp-blog-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.amp-blog-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  opacity: 0.9;
+}
+
+.amp-blog-card:hover .amp-blog-image-wrapper img {
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+.amp-blog-category-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(4, 12, 8, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(159, 255, 194, 0.3);
+  color: #9fffc2;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Body Content */
+.amp-blog-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.amp-blog-content h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.amp-blog-desc {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.amp-blog-desc.expanded {
+  display: block;
+  overflow: visible;
+}
+
+.amp-see-more-btn {
+  border: none;
+  background: none;
+  color: #9fffc2;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 18px;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+
+.amp-see-more-btn:hover {
+  color: #d7ff2f;
+}
+
+/* Metadata Badges */
+.amp-blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.amp-meta-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.amp-meta-badge.student {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.amp-meta-badge.company {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.amp-meta-badge.package {
+  background: rgba(159, 255, 194, 0.15);
+  color: #9fffc2;
+  border: 1px solid rgba(159, 255, 194, 0.3);
+}
+
+/* No Blogs State */
+.amp-no-blogs {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  color: #cbd5e1;
+}
+
+.amp-no-blogs-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.amp-no-blogs h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.amp-no-blogs p {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ================= RESPONSIVE STYLES ================= */
+@media (max-width: 1024px) {
+  .amp-blog-header h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .amp-blog-container {
+    padding: 60px 0;
+  }
+
+  .amp-blog-header h1 {
+    font-size: 28px;
+  }
+
+  .amp-blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .amp-blog-category-filter {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .amp-blog-category-filter button {
+    white-space: nowrap;
+  }
+}

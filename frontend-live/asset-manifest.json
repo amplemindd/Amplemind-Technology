@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0951170b.css",
+    "main.js": "/static/js/main.bf3aed29.js",
+    "static/js/453.20359781.chunk.js": "/static/js/453.20359781.chunk.js",
+    "static/media/Cloud-Hosting.png": "/static/media/Cloud-Hosting.252ae5de562213a7df4e.png",
+    "static/media/Customer-Support.png": "/static/media/Customer-Support.60ded5b97320bdcf508c.png",
+    "static/media/Website-Development.png": "/static/media/Website-Development.f8591c2c4d3e02432ead.png",
+    "static/media/IT-Consultant.png": "/static/media/IT-Consultant.fcb3c08de473807f2ae8.png",
+    "static/media/Mobile-app.png": "/static/media/Mobile-app.3fbb1560520d2ec47f83.png",
+    "static/media/Real-Estate-Services.png": "/static/media/Real-Estate-Services.d463d3b3c9b03b309e67.png",
+    "static/media/Digital-Marketing.png": "/static/media/Digital-Marketing.e879f080b0097077184b.png",
+    "static/media/star.png": "/static/media/star.77e8ec7a4b0891e91f9a.png",
+    "static/media/Corporate-training.jpg": "/static/media/Corporate-training.dc7c1e4f20fc897ed3e3.jpg",
+    "static/media/software-dev.jpg": "/static/media/software-dev.0e1cf473d99aac7c99ab.jpg",
+    "static/media/man.jpg": "/static/media/man.4bbec604e5170f621389.jpg",
+    "static/media/man2.jpg": "/static/media/man2.4bbec604e5170f621389.jpg",
+    "static/media/Amplemind Logo New.png": "/static/media/Amplemind Logo New.95fd9588d168a39d2a37.png",
+    "static/media/about-middle.jpg": "/static/media/about-middle.cf89befcdcf44ed7ce56.jpg",
+    "static/media/home-image.jpg": "/static/media/home-image.3c4d31bbd812f70fd97b.jpg",
+    "index.html": "/index.html",
+    "main.0951170b.css.map": "/static/css/main.0951170b.css.map",
+    "main.bf3aed29.js.map": "/static/js/main.bf3aed29.js.map",
+    "453.20359781.chunk.js.map": "/static/js/453.20359781.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0951170b.css",
+    "static/js/main.bf3aed29.js"
+  ]
+}

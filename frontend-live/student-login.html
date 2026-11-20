@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="theme-color" content="#022c22">
+<title>Student Login | AmpleMind Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #078d4b;
+    --text-dark: #10243a;
+    --text-muted: #657a91;
+    --white: #ffffff;
+    --border: #d4dee8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  /* ================= LEFT PANEL ================= */
+  .left-panel {
+    flex: 1.25;
+    background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 3.5rem 4.5rem;
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .left-panel::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .brand-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    z-index: 10;
+    margin-bottom: 3rem;
+  }
+
+  .logo-box {
+    width: 54px;
+    height: 54px;
+    background: var(--white);
+    color: #056b38;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  }
+
+  .logo-title { font-size: 24px; font-weight: 800; line-height: 1.1; }
+  .logo-subtitle { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; opacity: 0.85; margin-top: 4px; color: #a7f3d0; }
+  
+  .header-divider {
+    width: 2px; height: 45px;
+    background: rgba(255,255,255,0.25);
+    margin: 0 1.5rem;
+  }
+  
+  .header-slogan { font-size: 14px; line-height: 1.5; opacity: 0.95; font-weight: 500; color: #d1fae5; }
+
+  .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .welcome-badge {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+    color: #a7f3d0;
+  }
+
+  .hero-title {
+    font-size: 4.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title span { color: #34d399; }
+
+  .hero-desc {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 48px;
+    max-width: 600px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    width: 100%;
+  }
+
+  .feature-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .feature-card:hover { 
+    transform: translateY(-5px); 
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .feat-icon {
+    width: 52px; height: 52px;
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+    color: #34d399;
+  }
+
+  .feat-text strong { display: block; font-size: 16px; margin-bottom: 6px; letter-spacing: -0.2px; }
+  .feat-text small { font-size: 13px; opacity: 0.75; line-height: 1.4; }
+
+  .footer-left {
+    z-index: 10;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 3rem;
+  }
+
+  /* ================= RIGHT PANEL (FORM) ================= */
+  .right-panel {
+    flex: 0.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    background: var(--white);
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .portal-tag {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #e6faf0;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 30px;
+  }
+
+  .form-header { margin-bottom: 2.5rem; }
+  .form-title { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; margin-bottom: 10px; }
+  .form-subtitle { font-size: 16px; color: var(--text-muted); line-height: 1.5; }
+
+  .input-group { margin-bottom: 1.5rem; }
+  .input-label { display: block; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+  
+  .input-wrapper { position: relative; }
+
+  .input-icon {
+    position: absolute;
+    left: 20px; top: 50%;
+    transform: translateY(-50%);
+    color: #8fa0b3;
+    font-size: 20px;
+  }
+
+  .input-field {
+    width: 100%;
+    height: 60px;
+    padding: 0 48px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: #fbfcfd;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: all 0.25s ease;
+  }
+
+  .input-field::placeholder { color: #8fa0b3; }
+  .input-field:focus { outline: none; background: var(--white); border-color: var(--primary); box-shadow: 0 0 0 4px rgba(7, 141, 75, 0.1); }
+
+  .eye-btn {
+    position: absolute;
+    right: 18px; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none;
+    color: #8fa0b3;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .eye-btn:hover { color: var(--text-dark); }
+
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .remember-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; color: var(--text-dark); font-weight: 500; }
+  .remember-wrap input { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+  
+  .forgot-link { font-size: 14px; font-weight: 700; color: var(--primary); text-decoration: none; }
+  .forgot-link:hover { text-decoration: underline; }
+
+  .btn-login {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, #0fc361, #078d4a);
+    color: var(--white);
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 12px 25px rgba(7, 143, 74, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-login:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(7, 143, 74, 0.3); }
+  .btn-login:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+  .register-text { text-align: center; margin-top: 2.5rem; font-size: 15px; color: var(--text-muted); }
+  .register-text a { color: var(--primary); font-weight: 800; text-decoration: none; margin-left: 4px; }
+  .register-text a:hover { text-decoration: underline; }
+
+  .spinner {
+    width: 20px; height: 20px;
+    border: 3px solid rgba(255,255,255,0.4);
+    border-top-color: var(--white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+  
+  /* Mobile specific footer */
+  .mobile-footer {
+    display: none;
+  }
+
+  /* ================= TOAST ================= */
+  .toast {
+    position: fixed;
+    top: 24px; right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--primary);
+    transform: translateX(120%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    width: max-content;
+    max-width: 90vw;
+  }
+  .toast.show { transform: translateX(0); opacity: 1; }
+  .toast.error { border-left-color: #e5484d; }
+  
+  .toast-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #e8faef; color: var(--primary);
+    font-weight: 900;
+  }
+  .toast.error .toast-icon { background: #ffeded; color: #e5484d; }
+  .toast-msg { font-size: 14px; font-weight: 600; color: var(--text-dark); }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1100px) {
+    .layout-wrapper { flex-direction: column; }
+    
+    .left-panel {
+      flex: none;
+      padding: 3rem;
+      border-radius: 0 0 30px 30px;
+    }
+    
+    .header-divider, .header-slogan { display: none; }
+    .hero-content { margin: 1rem 0 0 0; }
+    .hero-title { font-size: 3.2rem; }
+    
+    /* Copyright handling for mobile - Moves to absolute bottom of page */
+    .footer-left { display: none; }
+    .mobile-footer {
+      display: block;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      white-space: nowrap; /* Ensures it stays on 1 line */
+    }
+    
+    .right-panel { 
+      padding: 4rem 2rem 6rem; /* Extra padding at bottom so form doesn't hit footer */
+      align-items: flex-start; 
+    }
+    .portal-tag { top: 1.5rem; right: 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    .left-panel { padding: 2rem 1.5rem; }
+    
+    .logo-box { width: 44px; height: 44px; font-size: 24px; }
+    .logo-title { font-size: 20px; }
+    .logo-subtitle { font-size: 10px; }
+    .brand-header { margin-bottom: 2rem; }
+    
+    .welcome-badge { font-size: 13px; padding: 8px 14px; margin-bottom: 20px; }
+    .hero-title { font-size: 2.4rem; }
+    .hero-desc { font-size: 15px; margin-bottom: 30px; }
+    
+    .features-grid { grid-template-columns: 1fr; gap: 16px; } 
+    
+    .right-panel { padding: 3rem 1.5rem 5.5rem; }
+    .portal-tag { display: none; } 
+    
+    .form-title { font-size: 2.2rem; }
+    .input-field { font-size: 16px; }
+    
+    .toast { top: 16px; right: 16px; left: 16px; width: auto; }
+    
+    /* Force 1 line perfectly on very small phones */
+    .mobile-footer { font-size: 11px; bottom: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout-wrapper">
+  
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    
+    <div class="brand-header">
+      <div class="logo-box">A</div>
+      <div>
+        <div class="logo-title">AmpleMind</div>
+        <div class="logo-subtitle">TECHNOLOGIES</div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-slogan">Learn Today<br>Build Tomorrow</div>
+    </div>
+
+    <div class="hero-content">
+      <div class="welcome-badge">Welcome to AmpleMind</div>
+      <h1 class="hero-title">Your Learning<br>Journey <span>Starts Here</span></h1>
+      <p class="hero-desc">Learn. Practice. Build. Get Certified.<br>Shape a brighter future with AmpleMind.</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feat-icon">🎥</div>
+          <div class="feat-text">
+            <strong>Live Classes</strong>
+            <small>Learn from industry experts directly</small>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon">📄</div>
+          <div class="feat-text">
+            <strong>Online Tests</strong>
+            <small>Track progress with detailed reports</small>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon">🏅</div>
+          <div class="feat-text">
+            <strong>Certificates</strong>
+            <small>Showcase skills to top recruiters</small>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon">💼</div>
+          <div class="feat-text">
+            <strong>Placement Support</strong>
+            <small>Get job ready with career guidance</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Copyright -->
+    <div class="footer-left">
+      © 2026 AmpleMind Technologies. All rights reserved.
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL (FORM) -->
+  <div class="right-panel">
+    <div class="portal-tag">🎓 Student Portal</div>
+    
+    <div class="form-container">
+      <div class="form-header">
+        <h2 class="form-title">Student Login</h2>
+        <p class="form-subtitle">Login to continue your learning journey.</p>
+      </div>
+
+      <form id="loginForm">
+        
+        <div class="input-group">
+          <label for="email" class="input-label">Email Address</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉</span>
+            <input type="email" id="email" class="input-field" placeholder="Enter your email address" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="password" class="input-label">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" class="input-field" placeholder="Enter your password" required autocomplete="current-password">
+            <button type="button" class="eye-btn" id="togglePassword">◉</button>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-wrap">
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="/forgot-password" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn-login" id="loginBtn">
+          Login &nbsp;→
+        </button>
+      </form>
+
+      <div class="register-text">
+        Don't have an account? <a href="/student-register">Register Now</a>
+      </div>
+    </div>
+    
+    <!-- Mobile specific footer at the absolute bottom -->
+    <div class="mobile-footer">© 2026 AmpleMind Technologies. All rights reserved.</div>
+
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-icon" id="toastIcon">✓</div>
+  <div class="toast-msg" id="toastText"></div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  const API_URL = "https://amplemindtechnologies.com/api/auth/student-login";
+  const form = document.getElementById("loginForm");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  const loginBtn = document.getElementById("loginBtn");
+  const togglePassword = document.getElementById("togglePassword");
+  const toast = document.getElementById("toast");
+  const toastIcon = document.getElementById("toastIcon");
+  const toastText = document.getElementById("toastText");
+  let toastTimer = null;
+
+  function showToast(message, type) {
+    clearTimeout(toastTimer);
+    toastText.textContent = message;
+    if (type === "error") {
+      toast.classList.add("error");
+      toastIcon.textContent = "!";
+    } else {
+      toast.classList.remove("error");
+      toastIcon.textContent = "✓";
+    }
+    toast.classList.add("show");
+    toastTimer = setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3500);
+  }
+
+  togglePassword.addEventListener("click", () => {
+    if (password.type === "password") {
+      password.type = "text";
+      togglePassword.style.color = "var(--text-dark)";
+    } else {
+      password.type = "password";
+      togglePassword.style.color = "#8fa0b3";
+    }
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value;
+    
+    if (!emailValue || !passwordValue) {
+      showToast("Please enter your email and password.", "error");
+      return;
+    }
+    
+    loginBtn.disabled = true;
+    loginBtn.innerHTML = '<div class="spinner"></div> Signing in...';
+    
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: emailValue, password: passwordValue })
+      });
+      
+      let data = {};
+      try { data = await response.json(); } catch (error) { data = {}; }
+      
+      if (!response.ok || !data.success) {
+        showToast(data.message || "Invalid Email or Password", "error");
+        loginBtn.disabled = false;
+        loginBtn.innerHTML = "Login &nbsp;→";
+        return;
+      }
+      
+      localStorage.setItem("studentToken", data.token);
+      localStorage.setItem("student", JSON.stringify(data.student));
+      
+      showToast("Login successful! Redirecting...", "success");
+      
+      setTimeout(() => {
+        window.location.href = "/student-dashboard";
+      }, 1000);
+      
+    } catch (error) {
+      showToast("Unable to connect to server. Please try again.", "error");
+      loginBtn.disabled = false;
+      loginBtn.innerHTML = "Login &nbsp;→";
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pymongo
+motor
+python-dotenv
+python-jose
+passlib[bcrypt]
+python-multipart
+pydantic
+email-validator
+websockets
+a2wsgi
+SQLAlchemy
+PyMySQL
+
+requests
