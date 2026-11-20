@@ -17,3 +17,5 @@ uploads/
 *.broken
 *.bak2
 *-old
+*.bak-*
+*-backup-*
